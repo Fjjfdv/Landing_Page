@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <script src="https://kit.fontawesome.com/d50f9ed6bc.js" crossorigin="anonymous"></script>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            display: flex;
+            width: 100%;
+            height: 1.7cm;
+            background-color: rgb(4, 4, 4);
+            justify-content: center;
+            position: fixed;
+            transition: background-color 0.4s ease-in-out;
+        }
+
+        header.scrolled {
+            background-color: white;
+            opacity: 0.98;
+        }
+
+        nav {
+            padding-top: 10px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: rgb(255, 255, 255);
+            font-size: 0.7cm;
+            padding-right: 40px;
+            font-weight: bold;
+            transition: color 0.4s ease-in-out;
+        }
+
+        .scrolled nav a {
+            color: black;
+        }
+
+        .Home {
+            display: flex;
+            height: 13cm;
+        }
+
+        .Home .home1 {
+            width: 50%;
+            text-align: center;
+            font-size: 2cm;
+            font-weight: bold;
+            font-style: italic;
+        }
+
+        .Home .home1 a {
+            font-size: 0.7cm;
+            font-style: normal;
+            padding: 13px;
+            color: white;
+            background-color: black;
+            border-radius: 10px;
+            text-decoration: none;
+        }
+
+        .Home .home1 a:hover {
+            background-color: white;
+            color: black;
+            text-decoration: line;
+        }
+
+        .Home .home2 {
+            width: 50%;
+            justify-content: center;
+            margin: 30px;
+            background: url('https://tse2.mm.bing.net/th?id=OIP.g6CJVkXRU0Yx-etVcwUwAwHaEL&pid=Api&P=0&h=180')no-repeat center center/cover;
+            border-radius: 10px;
+
+        }
+
+        .Home .home2 .home2-0 {
+            background-color: rgb(0, 0, 0, 0.4);
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            text-align: center;
+            position: relative;
+        }
+
+        .Home .home2 .home2-0-2 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 0.6cm;
+            line-height: 1cm;
+        }
+
+        .Home .home2 .home2-0-2 p {
+            padding: 5px;
+            background-color: white;
+            color: black;
+            font-weight: bold;
+            border-radius: 30px;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        .Home .home2 .home2-0-2 p a {
+            color: black;
+            text-decoration: none;
+        }
+
+        .Home .home2 img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .marquee {
+            margin-left: 110px;
+            margin-right: 110px;
+        }
+
+        marquee .img {
+            width: 320px;
+            height: 350px;
+            border-radius: 30px;
+            padding: 10px;
+        }
+
+        #about {
+            text-align: center;
+            font-size: 1.3cm;
+        }
+
+        #about span {
+            font-size: 0.4cm;
+        }
+
+        #para {
+            border: 2px solid black;
+            margin-left: 70px;
+            font-size: 0.6cm;
+            margin-right: 70px;
+            box-shadow: 10px 10px rgb(215, 215, 219);
+            border-radius: 15px;
+            padding: 15px;
+            border-color: rgb(196, 196, 196);
+        }
+
+        .fb {
+            margin-left: 3cm;
+        }
+
+        .fb a img {
+            width: 1.1cm;
+            height: 1cm;
+            margin: 10px;
+        }
+
+        .div {
+            margin-left: 2cm;
+            margin-right: 2cm;
+            border: 1px solid black;
+            padding: 20px;
+            font-size: 0.6cm;
+            border-radius: 20px;
+            border-color: rgb(187, 185, 185);
+            box-shadow: 10px 10px rgb(214, 213, 213);
+        }
+
+        .service {
+            text-align: center;
+            font-size: 1.2cm;
+        }
+
+        #s-p {
+            text-align: center;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 450px 450px;
+            grid-template-rows: 400px;
+            justify-content: center;
+            grid-gap: 20px
+        }
+
+        .box1 {
+            border: 1px solid black;
+            background-color: rgb(243, 243, 243);
+            box-shadow: 10px 10px rgb(195, 194, 194);
+            border-radius: 20px;
+            justify-content: center;
+            text-align: center;
+            line-height: 0.9cm;
+
+        }
+
+        .box2 {
+            border: 1px solid black;
+            background-color: rgb(245, 245, 245);
+            box-shadow: 10px 10px rgb(195, 193, 193);
+            border-radius: 20px;
+            justify-content: center;
+            text-align: center;
+            line-height: 0.9cm;
+
+        }
+
+        .grid h2 {
+            padding: 25px;
+            font-size: 0.95cm;
+        }
+
+        .grid li {
+            font-size: 0.6cm;
+        }
+
+        .div a {
+            padding: 10px;
+            background-color: black;
+            color: white;
+            text-decoration: none;
+            align-items: center;
+        }
+
+        .info {
+            width: 95%;
+            height: 7.5cm;
+            margin: 1cm;
+            border: 1px solid black;
+            border-radius: 20px;
+            background-image: url("island.jpeg");
+            background-repeat: no-repeat;
+            background-size: 500px;
+            background-repeat: repeat-x;
+
+        }
+
+        .info .p {
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(to right, rgba(0, 0, 0), rgb(63, 62, 62, 0.5));
+            border-radius: 20px;
+            color: white;
+            padding: 10px;
+            font-size: 0.75cm;
+        }
+
+        .info div .span {
+            word-wrap: break-word;
+            width: 18cm;
+            color: rgb(255, 255, 255);
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            font-size: 0.5cm;
+            line-height: 0.8cm;
+        }
+
+        footer {
+            width: 100%;
+            height: 5cm;
+            border: 1px solid black;
+            background-color: rgb(0, 0, 0);
+            color: rgb(255, 253, 253);
+        }
+
+        .last {
+            display: flex;
+        }
+
+        .last1 {
+            width: 30%;
+        }
+
+        .last2 {
+            width: 30%;
+        }
+
+        .last3 {
+            width: 40%;
+        }
+
+        footer #Prerna {
+            margin: 40px;
+        }
+
+        .last3 {
+            font-size: 0.5cm;
+        }
+
+        .last3 span {
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img src="hotel-removebg-preview.png" alt="" class="img">
+        <nav>
+
+            <a href="">Home</a>
+            <a href="#about">About</a>
+            <a href="#s-p">Services</a>
+            <a href="#Prerna">Contact</a>
+        </nav>
+    </header>
+    <hr>
+    <br>
+    <hr><br>
+    <br>
+    <div class="Home">
+        <div class="home1"><br>Hotel Rooms <br>and Resorts <br>at lowest Prices <br> <a href="">Book Now</a>
+        </div>
+        <div class="home2">
+            <div class="home2-0">
+                <div class="home2-0-2">
+                    <p><a href="">Sign Up</a></p> <br>
+                    <p><a href="">Log in</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <hr><br>
+    <h2 id="about">Best Hotel Booking Sites <br><span> We recommend using Booking.com for hotel reservations </span>
+    </h2><br>
+    <div class="fb"><a href=""><img src="facebook-removebg-preview.png" alt=""></a>
+        <a href=""><img src="pinterest-removebg-preview.png" alt=""></a>
+        <a href=""> <img src="gmail-removebg-preview.png" alt="">
+    </div></a> <br>
+    <p id="para"><br>Our site has a wide range of luxury and budget-friendly hotel chain properties. We have picked
+        the finest hotels in India with world-class amenities. We bring you not only a stay option, but an experience in
+        your budget to enjoy the luxury. We make sure that all the hotels are safe, hygienic, comfortable, and easily
+        approachable when it comes to location. Book your hotel with EaseMyTrip and don't forget to grab an amazing
+        hotel deal to save huge on your stay.</p><br><br>
+    <marquee behavior="30" direction="right" class="marquee">
+        <img src="https://tse2.mm.bing.net/th?id=OIP.U4M8adpeU-5Qvy2M-OpzVAHaE8&pid=Api&P=0&h=180" alt="" class="img">
+        <img src="https://tse1.mm.bing.net/th?id=OIP.KK6k-d0DyW5Q96Kt1HTPCAHaEK&pid=Api&P=0&h=180" alt="" class="img">
+        <img src="https://tse1.mm.bing.net/th?id=OIP.SP6giiUsoG3UuGsmeSA-6AHaFj&pid=Api&P=0&h=180" alt="" class="img">
+        <img src="https://tse2.mm.bing.net/th?id=OIP.s0ELeYZcgSHCcpAJem8ifwHaFP&pid=Api&P=0&h=180" alt="" class="img">
+    </marquee>
+    <br><br>
+    <hr> <br>
+    <h1 class="service">Services and Facilities</h1><br>
+    <p id="s-p">Exceptional service-endless possibilities</p><br><br>
+    <div class="div">
+        Whether you are travelling for business or pleasure, the luxury hotel services offered by the five star Grand
+        Palace Hotel make it an ideal choice for your stay in Riga, Latvia. The hotel’s luxurious surroundings, comfort,
+        thoughtful touches and a personalized service sets it apart from any other hotel, allowing you to feel like
+        being at home from your very first steps into the hotel.
+
+        We are geared towards the fulfilment of the needs of any discerning guest and below you can find an alphabetical
+        overview of the most commonly-used services and facilities offered by our boutique <br><br> <a href="">Book
+            Now</a>
+    </div><br><br>
+    <div class="grid">
+        <div class="box1">
+            <h2>Hotel Services:</h2>
+            <li>Car rental serive</li>
+            <li>Doctor on call</li>
+            <li>Flower arrangement</li>
+            <li>Ironing service</li>
+            <li>turndown service</li>
+            <li>Mail Service</li>
+            <li>Dry cleaning</li>
+            <li>Courier Service</li>
+            <li>Laundry an valet Service</li>
+        </div>
+        <div class="box2">
+            <h2>Hotel Facilities:</h2>
+            <li>Banquet facilities</li>
+            <li>Restaurant</li>
+            <li>Summer terrace</li>
+            <li>Fitness room</li>
+            <li>Luggage room</li>
+            <li>Computer facility</li>
+            <li>conference and meeting facilities</li>
+            <li>Disabled room</li>
+            <li>Non-smoking rooms</li>
+        </div>
+    </div>
+    <div class="info">
+        <div class="p">
+            <h2>Why to book Hotels Online with Our Website</h2>
+            <div class="span">
+                We are back in the post-pandemic world with a bouquet of hotels across Indian cities ranging from
+                leisure to business ones with a new outlook. Yatra who has always been on the forefront of assuring a
+                comfortable stay which is a bang for your bucks, is offering you online hotel booking that guarantees
+                you hygienic, sanitised rooms across hotels in India. Explore a raft of interesting features such as
+                Clean Pass stays, travel again offers and long stay discounts encouraging you to travel again, make your
+                hotel booking while keeping your anxieties at bay.
+            </div>
+        </div>
+    </div>
+    <footer>
+
+        <div id="Prerna">
+            <label for="country">country:</label>
+            <select name="mycountry" id="country">
+                <option value="India"> India </option>
+                <option value="India"> Arab World </option>
+                <option value="India"> Argentina </option>
+                <option value="India"> Australia </option>
+                <option value="India"> Austria(Osterreich) </option>
+                <option value="India"> Belgium(Belgie) </option>
+                <option value="India"> Brazil </option>
+                <option value="India"> Bulgaria </option>
+                <option value="India"> Canada</option>
+                <option value="India"> chile </option>
+                <option value="India"> Colombia </option>
+                <option value="India"> Crotia </option>
+                <option value="India"> Czechia </option>
+                <option value="India"> Denmark </option>
+                <option value="India"> Ecudor </option>
+                <option value="India"> Finland(Suomi) </option>
+                <option value="India"> Germany </option>
+                <option value="India"> Greece</option>
+                <option value="India">Hong Kong </option>
+                <option value="India"> Hungary </option>
+                <option value="India"> India </option>
+                <option value="India"> Indonesia </option>
+                <option value="India"> Ireland </option>
+                <option value="India"> Israel </option>
+                <option value="India"> Italy </option>
+                <option value="India"> Japan </option>
+                <option value="India"> Korea </option>
+                <option value="India"> Malaysia</option>
+                <option value="India"> Mexico</option>
+                <option value="India"> Netherlands </option>
+                <option value="India"> New Zealand </option>
+                <option value="India"> Norway </option>
+                <option value="India"> Peru </option>
+                <option value="India"> Philippines </option>
+                <option value="India"> Poland</option>
+                <option value="India"> Portugal </option>
+                <option value="India"> Romania </option>
+                <option value="India"> Serbia </option>
+                <option value="India"> Singapore </option>
+                <option value="India"> Slovekia</option>
+                <option value="India"> Slovenia</option>
+                <option value="India"> South Africa</option>
+                <option value="India"> Spain</option>
+                <option value="India"> Sweden</option>
+                <option value="India"> Switzerland</option>
+                <option value="India"> Taiwan</option>
+                <option value="India"> Thailand</option>
+                <option value="India"> Turkey</option>
+                <option value="India"> UAE</option>
+                <option value="India"> Unite Kingdom</option>
+                <option value="India"> Uruguay</option>
+                <option value="India"> USA</option>
+                <option value="India"> Vietnam</option>
+            </select>
+
+            <div class="last">
+                <div class="last1">
+                    Company <br> jobs <br> Press <br>investor relation <br>Mobile apps searching on go
+                </div>
+                <div class="last2">
+                    Help <br> Terms and conditions <br> Legal informations <br> Do Not Sell My Personal Information <br>
+                    Privacy Notice <br>cyber Security
+                </div>
+                <div class="last3">Wants to <span>receive</span> exclusive offers ? Subscribe to our
+                    <span>newsletter</span>
+                    <input type="email"> Subscribe
+                    trivago N.V., Kesselstraße 5 – 7, 40221 Düsseldorf, Germany <br>
+                    Copyright 2023 trivago | All rights reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 0) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        })
+    </script>
+</body>
+
+</html>
